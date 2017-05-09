@@ -9,4 +9,9 @@ describe('Thermostat', function () {
     expect(thermostat.temperature).toBe(20);
   });
 
+  it('should increases the temperature from 20 to 25 degrees', function(){
+    thermostat.increaseTemp(5);
+    expect(thermostat.temperature).toBe(25);
+  });
+
 });
