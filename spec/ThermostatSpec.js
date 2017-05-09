@@ -19,4 +19,18 @@ describe('Thermostat', function () {
     expect(thermostat.temperature).toBe(19);
   });
 
+  it('should have a minimum temperature value of 10 degrees', function(){
+    expect(thermostat.minTemp).toBe(10);
+  });
+
+  it('should not be able to decrease the temperature below 10 degrees', function(){
+
+    for (var i=0; i<=11; i++) {
+      thermostat.decreaseTemp();
+      console.log(thermostat.temperature);
+    }
+
+    expect(thermostat.temperature).toBe(10);
+  });
+
 });
