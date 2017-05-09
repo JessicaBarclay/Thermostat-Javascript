@@ -14,4 +14,9 @@ describe('Thermostat', function () {
     expect(thermostat.temperature).toBe(25);
   });
 
+  it('should descrease the temperature from 20 to 15 degrees', function(){
+    thermostat.decreaseTemp(5);
+    expect(thermostat.temperature).toBe(15);
+  });
+
 });
