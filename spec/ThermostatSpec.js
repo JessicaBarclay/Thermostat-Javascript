@@ -9,14 +9,14 @@ describe('Thermostat', function () {
     expect(thermostat.temperature).toBe(20);
   });
 
-  it('should increases the temperature from 20 to 25 degrees', function(){
-    thermostat.increaseTemp(5);
-    expect(thermostat.temperature).toBe(25);
+  it('should increases the temperature from 20 to 21 degrees', function(){
+    thermostat.increaseTemp();
+    expect(thermostat.temperature).toBe(21);
   });
 
-  it('should descrease the temperature from 20 to 15 degrees', function(){
-    thermostat.decreaseTemp(5);
-    expect(thermostat.temperature).toBe(15);
+  it('should descrease the temperature from 20 to 19 degrees', function(){
+    thermostat.decreaseTemp();
+    expect(thermostat.temperature).toBe(19);
   });
 
 });
