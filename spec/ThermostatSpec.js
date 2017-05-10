@@ -26,8 +26,11 @@ describe('Thermostat', function () {
   it('cannot decrease the temperature below 10 degrees', function(){
     for (var i=0; i<=11; i++) {
       thermostat.decreaseTemp();
-      console.log(thermostat.temperature);
     }
     expect(thermostat.temperature).toBe(10);
+  });
+
+  it('', function(){
+    expect(thermostat.powerSaving).toBe(true)
   });
 });
