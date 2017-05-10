@@ -1,8 +1,8 @@
 "use strict";
 
 function Thermostat() {
-  this._temperature = 20;
   this.MINIMUM_TEMPERATURE = 10;
+  this._temperature = 20;
   this._powerSaving = true;
 }
 
@@ -14,14 +14,18 @@ Thermostat.prototype.getPowerSaving = function () {
   return(this._powerSaving);
 };
 
+Thermostat.prototype.isMinimumTemperature = function () {
+  return this._temperature === this.MINIMUM_TEMPERATURE;
+};
+
 Thermostat.prototype.increaseTemp = function() {
   this._temperature++;
 };
 
 Thermostat.prototype.decreaseTemp = function() {
-  if (this._temperature > 10) {
-    this._temperature--;
+  if (this.isMinimumTemperature()) {
+    return;
   } else {
-    return('Cannot decrease temperature below ' + this.MINIMUM_TEMPERATURE);
+    this._temperature--;
   }
 };
