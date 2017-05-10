@@ -1,18 +1,21 @@
 "use strict";
 
 function Thermostat() {
-  this.temperature = 20;
+  this._temperature = 20;
   this.minTemp = 10;
-  this.powerSaving = true;
 }
 
+Thermostat.prototype.getCurrentTemperature = function () {
+  return(this._temperature);
+};
+
 Thermostat.prototype.increaseTemp = function() {
-  this.temperature++;
+  this._temperature++;
 };
 
 Thermostat.prototype.decreaseTemp = function() {
-  if (this.temperature > 10) {
-    this.temperature--;
+  if (this._temperature > 10) {
+    this._temperature--;
   } else {
     return('Cannot decrease temperature below ' + this.minTemp);
   }
