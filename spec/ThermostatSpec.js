@@ -15,23 +15,23 @@ describe('Thermostat', function () {
 
   it('increases temperature by 1', function(){
     thermostat.increaseTemp();
-    expect(thermostat._temperature).toBe(21);
+    expect(thermostat.getCurrentTemperature()).toBe(21);
   });
 
   it('decreases temperature by 1', function(){
     thermostat.decreaseTemp();
-    expect(thermostat._temperature).toBe(19);
+    expect(thermostat.getCurrentTemperature()).toBe(19);
   });
 
   it('has a minimum temperature value of 10 degrees', function(){
-    expect(thermostat.minTemp).toBe(10);
+    expect(thermostat.MINIMUM_TEMPERATURE).toBe(10);
   });
 
   it('cannot decrease the temperature below 10 degrees', function(){
     for (var i = 0; i <= 11; i++) {
       thermostat.decreaseTemp();
     }
-    expect(thermostat._temperature).toBe(10);
+    expect(thermostat.getCurrentTemperature()).toBe(10);
   });
 
 });

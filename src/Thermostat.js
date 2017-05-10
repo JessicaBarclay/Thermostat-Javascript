@@ -2,7 +2,7 @@
 
 function Thermostat() {
   this._temperature = 20;
-  this.minTemp = 10;
+  this.MINIMUM_TEMPERATURE = 10;
   this._powerSaving = true;
 }
 
@@ -22,6 +22,6 @@ Thermostat.prototype.decreaseTemp = function() {
   if (this._temperature > 10) {
     this._temperature--;
   } else {
-    return('Cannot decrease temperature below ' + this.minTemp);
+    return('Cannot decrease temperature below ' + this.MINIMUM_TEMPERATURE);
   }
 };
