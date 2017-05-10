@@ -18,6 +18,11 @@ describe('Thermostat', function () {
     expect(thermostat.getPowerSaving()).toBe(false);
   });
 
+  it('has a power saving mode which can be switched on', function(){
+    thermostat.switchPowerSavingOn();
+    expect(thermostat.getPowerSaving()).toBe(true);
+  });
+
   it('increases temperature by 1', function(){
     thermostat.increaseTemp();
     expect(thermostat.getCurrentTemperature()).toEqual(21);

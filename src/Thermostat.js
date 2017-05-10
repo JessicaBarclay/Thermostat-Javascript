@@ -18,6 +18,10 @@ Thermostat.prototype.switchPowerSavingOff = function () {
   return(this._powerSaving = false);
 };
 
+Thermostat.prototype.switchPowerSavingOn = function () {
+  return(this._powerSaving = true);
+};
+
 Thermostat.prototype.isMinimumTemperature = function () {
   return this._temperature === this.MINIMUM_TEMPERATURE;
 };
