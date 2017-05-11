@@ -3,17 +3,18 @@
 <html>
   <head>
     <title>Thermostat</title>
+    <link rel="stylesheet" href="stylesheet.css">
     <script src="src/Thermostat.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="index.js"></script>
   </head>
 
   <body>
-  <section>
+  <section id="thermostat-settings">
     <h1>Set Temperature: <span id="temperature"></span>&deg;C</h1>
     <h1>Energy Usage: <span id="energy-usage"></span></h1>
     <h1>PSM Mode: <span id="psm-mode"></span></h1>
-    <p>
+    <p id="nav">
     <button id="increase-temp">Increase Temp</button>
     <button id="decrease-temp">Decrease Temp</button>
     <button id="psm-on">Turn PSM On</button>
@@ -21,9 +22,9 @@
     <button id="reset">Reset Temp</button>
     </p>
   </section>
-  <section>
+  <section id="weather-settings">
     <h1>Current temperature: <span id="current-temperature"></span>&deg;C</h1>
-    <h1>Select City: 
+    <h1>Select City:
     <select id="current-city">
       <option value="london">London</option>
       <option value="vancouver">Vancouver</option>
@@ -32,5 +33,7 @@
     </select>
     </h1>
   </section>
+  <footer>
+  </footer>
   </body>
 </html>
