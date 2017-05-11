@@ -9,6 +9,7 @@ $( document ).ready(function() {
    $('#psm-on').css("background-color", "#00ff99");
    $('#psm-off').css("background-color", "#00ff99");
    updateTemperature();
+   displayWeather('London');
    $( '#psm-mode' ).text('On');
 
    $('#increase-temp').click(function(){
@@ -39,15 +40,20 @@ $( document ).ready(function() {
    });
 
    $('#current-city').change(function() {
-     var city = $('#current-city').val();
-   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
-     $('#current-temperature').text(data.main.temp);
-   });
+    var city = $('#current-city').val();
+    displayWeather(city);
    });
 
    function updateTemperature(){
     $( '#temperature' ).text(thermostat.getCurrentTemperature());
     $( '#energy-usage' ).text(thermostat.showUsage());
+   }
+
+   function displayWeather(city) {
+   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+     $('#current-temperature').text(data.main.temp);
+   });
+
    }
 
 });
