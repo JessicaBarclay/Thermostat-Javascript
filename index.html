@@ -9,17 +9,26 @@
   </head>
 
   <body>
-  <section> 
+  <section>
     <h1 id="temperature"></h1>
     <h1 id="energy-usage"></h1>
     <h1>PSM Mode:</h1><h1 id="psm-mode"></h1>
-    <p> 
+    <p>
     <button id="increase-temp">Increase Temp</button>
     <button id="decrease-temp">Decrease Temp</button>
     <button id="psm-on">Turn PSM On</button>
     <button id="psm-off">Turn PSM Off</button>
     <button id="reset">Reset Temp</button>
     </p>
+  </section>
+  <section>
+    <h1>Current temperature: <span id="current-temperature"></span></h1>
+    <select id="current-city">
+      <option value="london">London</option>
+      <option value="newyork">New York</option>
+      <option value="paris">Paris</option>
+      <option value="tokyo">Tokyo</option>
+    </select>
   </section>
   </body>
 </html>

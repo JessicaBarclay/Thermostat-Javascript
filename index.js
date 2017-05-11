@@ -19,7 +19,7 @@ $( document ).ready(function() {
    $('#decrease-temp').click(function() {
      thermostat.decreaseTemp();
      updateTemperature();
-     
+
    });
 
    $('#reset').click(function(){
@@ -36,6 +36,13 @@ $( document ).ready(function() {
    $('#psm-off').click(function(){
      thermostat.switchPowerSavingOff();
      $( '#psm-mode' ).text('Off');
+   });
+
+   $('#current-city').change(function() {
+     var city = $('#current-city').val();
+   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+     $('#current-temperature').text(data.main.temp);
+   });
    });
 
    function updateTemperature(){
