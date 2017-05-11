@@ -21,12 +21,12 @@ Thermostat.prototype.getPowerSaving = function () {
 
 Thermostat.prototype.showUsage = function () {
   if(this.getCurrentTemperature() < this.LOW_ENERGY_TEMP) {
-    return('Low usage');
+    return('low-usage');
   }
   if(this.getCurrentTemperature() >= this.HIGH_ENERGY_TEMP) {
-  return('High usage');
+  return('high-usage');
   }
-  return('Medium usage');
+  return('medium-usage');
 };
 
 Thermostat.prototype.switchPowerSavingOff = function () {

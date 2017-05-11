@@ -70,3 +70,16 @@ section {
 #psm-on, #psm-off{ 
   background-color: rgb(74, 195, 162);
 }
+
+
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: white;
+}
+
+.high-usage {
+  color: red;
+}

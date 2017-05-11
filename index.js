@@ -39,6 +39,7 @@ $( document ).ready(function() {
    function updateTemperature(){
     $( '#temperature' ).text(thermostat.getCurrentTemperature());
     $( '#energy-usage' ).text(thermostat.showUsage());
+    $('#energy-usage').attr('class', thermostat.showUsage());
    }
 
    function displayWeather(city) {
