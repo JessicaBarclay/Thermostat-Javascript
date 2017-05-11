@@ -1,12 +1,5 @@
 $( document ).ready(function() {
   var thermostat = new Thermostat();
-   $('h1').css('color', 'white');
-   $('h2').css('color', 'white');
-   $('#reset').css("background-color", "orange");
-   $('#increase-temp').css("background-color", "#ff5050");
-   $('#decrease-temp').css("background-color", "#66ccff");
-   $('#psm-on').css("background-color", "#00ff99");
-   $('#psm-off').css("background-color", "#00ff99");
    updateTemperature();
    displayWeather('London');
    $( '#psm-mode' ).text('On');
