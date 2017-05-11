@@ -1,6 +1,8 @@
 "use strict";
 
 function Thermostat() {
+  this.LOW_ENERGY_TEMP = 18;
+  this.HIGH_ENERGY_TEMP = 25;
   this.DEFAULT_TEMPERATURE = 20;
   this.MAX_LIMIT_PSM_ON = 25;
   this.MAX_LIMIT_PSM_OFF =32;
@@ -15,6 +17,16 @@ Thermostat.prototype.getCurrentTemperature = function () {
 
 Thermostat.prototype.getPowerSaving = function () {
   return(this._powerSaving);
+};
+
+Thermostat.prototype.showUsage = function () {
+  if(this.getCurrentTemperature() < this.LOW_ENERGY_TEMP) {
+    return('Low usage');
+  }
+  if(this.getCurrentTemperature() > this.HIGH_ENERGY_TEMP) {
+  return('High usage');
+  }
+  return('Medium usage');
 };
 
 Thermostat.prototype.switchPowerSavingOff = function () {

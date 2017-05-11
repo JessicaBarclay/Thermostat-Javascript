@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Thermostat', function () {
   var thermostat;
 
@@ -51,6 +53,30 @@ describe('Thermostat', function () {
     }
     thermostat.resetTemp();
     expect(thermostat.getCurrentTemperature()).toEqual(20);
+  });
+
+
+  describe('check energy usage', function(){
+
+    it('returns Low usage if current temperature below 18 degrees', function() {
+      for (var i = 1; i < 4; i++) {
+      thermostat.decreaseTemp(i);
+    }
+      expect(thermostat.showUsage()).toEqual('Low usage');
+    });
+
+    it('returns Medium usage if current temperature between 18-25', function() {
+      expect(thermostat.showUsage()).toEqual('Medium usage');
+    });
+
+    it('returns High usage if current temperature above 25 degrees', function() {
+      thermostat.switchPowerSavingOff();
+      for (var i = 0; i < 6; i++) {
+      thermostat.increaseTemp(i);
+    }
+      expect(thermostat.showUsage()).toEqual('High usage');
+    });
+
   });
 
   describe('when power saving mode is on', function(){
