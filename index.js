@@ -8,15 +8,39 @@ $( document ).ready(function() {
    $('#decrease-temp').css("background-color", "#66ccff");
    $('#psm-on').css("background-color", "#00ff99");
    $('#psm-off').css("background-color", "#00ff99");
-   $( '#temperature' ).text(thermostat.getCurrentTemperature());
+   updateTemperature();
+   $( '#psm-mode' ).text('On');
 
    $('#increase-temp').click(function(){
      thermostat.increaseTemp();
-     $( '#temperature' ).text(thermostat.getCurrentTemperature());
+     updateTemperature();
    });
 
    $('#decrease-temp').click(function() {
      thermostat.decreaseTemp();
-     $( '#temperature' ).text(thermostat.getCurrentTemperature());
+     updateTemperature();
+     
    });
+
+   $('#reset').click(function(){
+     thermostat.resetTemp();
+     updateTemperature();
+   });
+
+   $('#psm-on').click(function(){
+     thermostat.switchPowerSavingOn();
+     $( '#psm-mode' ).text('On');
+
+   });
+
+   $('#psm-off').click(function(){
+     thermostat.switchPowerSavingOff();
+     $( '#psm-mode' ).text('Off');
+   });
+
+   function updateTemperature(){
+    $( '#temperature' ).text(thermostat.getCurrentTemperature());
+    $( '#energy-usage' ).text(thermostat.showUsage());
+   }
+
 });

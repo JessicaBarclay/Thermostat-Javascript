@@ -23,7 +23,7 @@ Thermostat.prototype.showUsage = function () {
   if(this.getCurrentTemperature() < this.LOW_ENERGY_TEMP) {
     return('Low usage');
   }
-  if(this.getCurrentTemperature() > this.HIGH_ENERGY_TEMP) {
+  if(this.getCurrentTemperature() >= this.HIGH_ENERGY_TEMP) {
   return('High usage');
   }
   return('Medium usage');
